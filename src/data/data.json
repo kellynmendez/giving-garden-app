@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "North Texas Youth Shelter",
+        "date": "Clothes",
+        "venue": "Carrolton, TX",
+        "image": "https://scontent-fml20-1.xx.fbcdn.net/v/t39.30808-6/414015957_391351293218255_5973605935203971627_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=ozRr4p9C7AEAX_EWKQs&_nc_ht=scontent-fml20-1.xx&oh=00_AfAVOX5P5AgaA0BC3BDuCGDGQL6jhDFoBByJEdtHZ6BU6g&oe=660B676C",
+        "type": "clothes",
+        "typeIcon": "https://cdn.icon-icons.com/icons2/1805/PNG/512/4230535-calendar-event-star_115022.png"
+    },
+    {
+      "id": 2,
+      "name": "North Texas Food Bank",
+      "date": "Food",
+      "venue": "Plano, TX",
+      "image": "https://i0.wp.com/charities2love.org/wp-content/uploads/2023/08/NTFB_horizontal_2color_rgb_300ppi.png?fit=1200%2C1200&ssl=1:",
+      "type": "food",
+      "typeIcon": "https://cdn.icon-icons.com/icons2/390/PNG/512/microphone_39494.png"
+    },
+    {
+      "id": 3,
+      "name": "Richardson Humane Society",
+      "date": "Pets",
+      "venue": "Richardson, TX",
+      "image": "https://petstablished-app-beta.s3.amazonaws.com/uploads/user/logo/402744/2019_new_logo_RHS.jpg",
+      "type": "pets",
+      "typeIcon": "https://cdn.icon-icons.com/icons2/390/PNG/512/microphone_39494.png"
+    },
+    {
+        "id": 4,
+        "name": "Little Hands Book Bank",
+        "date": "Books",
+        "venue": "Dallas, TX",
+        "image": "https://static1.squarespace.com/static/58a4c4ff3e00be945c81a424/t/6495c1ba5f0b612efe2d18e2/1687536058442/Little+Hands+Book+Bank+Sparkles+Logo.jpg?format=1500w",
+        "type": "concert",
+        "typeIcon": "https://cdn.icon-icons.com/icons2/390/PNG/512/microphone_39494.png"
+    },
+    {
+        "id": 5,
+        "name": "Dallas Fire Rescue",
+        "date": "Clothes",
+        "venue": "Dallas, TX",
+        "image": "https://upload.wikimedia.org/wikipedia/en/7/76/Dallas_Fire-Rescue_Department_Logo.png",
+        "type": "clothes",
+        "typeIcon": "https://static.vecteezy.com/system/resources/previews/017/178/054/original/100-percent-emoji-symbol-on-transparent-background-free-png.png"
+    },
+    {
+        "id": 6,
+        "name": "The Salvation Army",
+        "date": "Clothes",
+        "venue": "Plano, TX",
+        "image": "https://content.betterimpact.com/files/agency/23130/Salvation-Army.jpg",
+        "type": "clothes",
+        "typeIcon": "https://cdn.icon-icons.com/icons2/390/PNG/512/microphone_39494.png"
+
+    }
+]
+  
