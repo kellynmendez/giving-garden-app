@@ -17,8 +17,8 @@ const Profile = () => {
             <img src={"https://petstablished-app-beta.s3.amazonaws.com/uploads/user/logo/402744/2019_new_logo_RHS.jpg"}alt="" className="border-4 rounded-lg h-[200px] bg-white-500 duration-300"/>
         </div>
         <div class="flex space-x-5 justify-center">
-            <button class="bg-[#426B1F] hover:bg-cyan-600 py-4 px-8 rounded-full text-xl font-bold font-serif text-[#ECECEC]">Donate</button>
-            <button class="bg-[#426B1F] hover:bg-cyan-600 py-4 px-8 rounded-full text-xl font-bold font-serif text-[#ECECEC]">Learn More</button>
+            <a href="donate" class="bg-[#426B1F] hover:bg-[#87A36F] py-4 px-8 rounded-full text-xl font-bold font-serif text-[#ECECEC]">Donate</a>
+            <a href="readmore" class="bg-[#426B1F] hover:bg-[#87A36F] py-4 px-8 rounded-full text-xl font-bold font-serif text-[#ECECEC]">Learn More</a>
             <br></br>
         </div>
         <div class="container max-w-4xl mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
