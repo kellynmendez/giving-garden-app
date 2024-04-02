@@ -13,18 +13,59 @@ const Donate = () => {
         </div>
       </div>
     <hr />
-    <div class="container max-w-6xl mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
-        <p class="text-3xl font-serif leading-loose ">Item 1</p>
+    <div class="container max-w-6xl mx-auto px-10 py-10 flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+      <div class="flex">
+         <img class="h-20 w-20" src="https://www.purina.com/sites/default/files/products/2023-01/beggin-original-bacon-product.png" alt=""></img>
+         <div class="flex-col items-right space-y-2">
+            <p class="px-10 text-lg font-bold">Dog Treats</p>
+            <p class="text-lg">$5.20</p>
+         </div>
+         <div class="flex-1 text-right">
+            <button class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+         </div>
+      </div>
      </div>
-     <div class="container max-w-6xl mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
-        <p class="text-3xl font-serif leading-loose ">Item 2</p>
+
+     <div class="container max-w-6xl mx-auto px-10 py-10 flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+      <div class="flex">
+         <img class="h-20 w-20" src="https://www.meijer.com/content/dam/meijer/product/0713/73/3915/84/0713733915847_0_A1C1_1200.png" alt=""></img>
+         <div class="flex-col items-right space-y-2">
+            <p class="px-10 text-lg font-bold">Dog Food</p>
+            <p class="text-lg">$3.99</p>
+         </div>
+         <div class="flex-1 text-right">
+            <button class=" object-right bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+         </div>
+   
+      </div>
      </div>
-     <div class="container max-w-6xl mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
-        <p class="text-3xl font-serif leading-loose ">Item 3</p>
+
+     <div class="container max-w-6xl mx-auto px-10 py-10 flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+      <div class="flex">
+         <img class="h-20 w-20" src="https://www.hartz.com/wp-content/uploads/2023/04/3270012623_just_for_cats_variety_pack_front_1300x1300.png" alt=""></img>
+         <div class="flex-col items-right space-y-2">
+            <p class="px-10 text-lg font-bold">Cat Toys</p>
+            <p class="text-lg">$10.99</p>
+         </div>
+         <div class="flex-1 text-right">
+            <button class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+         </div>
+      </div>
      </div>
-     <div class="container max-w-6xl mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
-        <p class="text-3xl font-serif leading-loose ">Item 4</p>
+
+     <div class="container max-w-6xl mx-auto px-8 py-8 flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+      <div class="flex">
+         <img class="h-20 w-20" src="https://cuddlesmeow.com/cdn/shop/products/O1CN01mbi4b81xYRKbblMNT__2210956526455-0-cib.png?v=1670899855" alt=""></img>
+         <div class="flex-col items-right space-y-2">
+            <p class="px-10 text-lg font-bold">Cat Bed</p>
+            <p class="text-lg">$35</p>
+         </div>
+         <div class="flex-1 text-right">
+            <button class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+         </div>
+      </div>
      </div>
+
   </div>
   );
 }
