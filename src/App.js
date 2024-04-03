@@ -1,17 +1,25 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
+import Navigation from "./components/Navigation";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+
 
 function App() {
   return (
-    <>
-    <Navbar></Navbar>
-    <div>
-      <meta charSet="utf-8"/>
-      <h1> Title Example </h1>
-    </div>
-    <Dashboard></Dashboard>
-    </>
+    <Router>
+      <Navigation />
+      <Switch>
+        <Route path="/about" component={About} />
+        <Route exact path="/" component={Home} />
+        <Route path="/profile" component={Profile} />
+      </Switch> 
+    </Router>
   );
 }
 
