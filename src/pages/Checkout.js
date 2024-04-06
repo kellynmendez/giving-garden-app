@@ -1,0 +1,92 @@
+import React from "react"; 
+
+const Checkout = () => {
+    return (
+        <div class="space-y-10">
+
+            <meta charSet="utf-8"/>
+            <div>
+                <p className="font-serif font-heading text-5xl font-bold text-[#426B1F] py-5 px-20"> Checkout</p>
+            </div>
+            <hr />
+
+            <div class="container flex mx-auto lg:px-4 space-x-10">
+                <div class="container shadow-md w-7/12 px-10 py-10 lg:px-8 items-left bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+                    <form>
+                        <div class="grid mb-6 gap-6 md:grid-cols-2">
+                            <div>
+                                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Card Number</label>
+                                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>
+                            <div>
+                                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name on Card</label>
+                                <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John Doe" required />
+                            </div>
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">MM/YY</label>
+                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="MM/YY" required />
+                            </div>  
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CVV</label>
+                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="XXX" required />
+                            </div>  
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Billing Address</label>
+                            <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                        </div>
+
+                        <div class="grid gap-6 mb-6 md:grid-cols-2">
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>  
+                            <div>
+                                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">State</label>
+                                <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Country</label>
+                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>  
+                            <div>
+                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Zip Code</label>
+                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            </div>  
+                        </div> 
+                        <button type="submit" class="text-white bg-[#426B1F] hover:bg-[#87A36F] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                            <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                            Confirm Checkout
+                        </button>
+                        </form>
+                </div>
+
+                <div class="flex-col px-4 py-4 lg:px-8 space-y-10">
+                    <div class="container shadow-lg  bg-[#f5f7f4] rounded-xl text-[#5B5040] font-serif leading-loose px-8 py-8">
+                        <p class="text-3xl font-serif font-bold leading-loose ">Donation Summary </p>
+                        <p class="max-w-4xl text-sm font-serif leading-loose"><span class="mr-64">Subtotal</span><span>$98.95</span></p>
+                        <p class="max-w-4xl text-sm font-serif leading-loose"><span class="mr-64">Shipping</span><span>$3.99</span></p>
+                        <p><span class="mr-96"></span></p>
+                        <p class="max-w-4xl font-bold text-lg font-serif leading-loose"><span class="mr-64">Total</span><span>$102.94</span></p>
+                    </div>
+
+                    <div class="container shadow-lg bg-[#E5EEE3] rounded-xl text-[#5B5040] font-serif leading-loose px-8 py-8">
+                        <p class="text-3xl text-center font-serif font-bold leading-loose ">Estimated Rewards </p>
+                        <p class="text-2xl text-center font-serif font-bold leading-loose ">102 Points! </p>
+                    </div>
+                </div>
+                
+
+                
+
+            </div>
+
+        </div>
+        
+    );
+}
+
+export default Checkout;
