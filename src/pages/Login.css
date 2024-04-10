@@ -1,12 +1,36 @@
 /* Login.css */
 
+.main-container {
+  display: flex; /* Use flexbox layout */
+  flex-direction: row; /* Arrange items in a row */
+}
+
+.deco-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 300px; /* Fixed width */
+  margin: auto; /* Center horizontally */
+  background-color: #87A36F; /* Background color */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Take full width of the container */
+  padding: 20px; /* Add padding to the sides */
+}
+
 /* Center the login container vertically and horizontally */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Set the height of the container to full viewport height */
-  }
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height of the container to full viewport height */
+}
   
   /* Style for the login form */
   form {

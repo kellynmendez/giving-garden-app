@@ -22,7 +22,8 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="main-container">
+        {/* <div className="deco-container"> </div> */}
         <div className="login-container"> {/* Apply the styles from Login.css */}
             <div className="row justify-content-center">
                 <form className="col-md-4 mt-3 pt-3 pb-3">
