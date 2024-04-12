@@ -1,12 +1,14 @@
 import React from "react";
-import Navigation from "./components/Navigation";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import UserProfile from "./pages/UserProfile";
 import Donate from "./pages/Donate";
 import Checkout from "./pages/Checkout";
 
@@ -14,13 +16,15 @@ import Checkout from "./pages/Checkout";
 function App() {
   return (
     <Router>
-      <Navigation />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/donate" component={Donate} />
-        <Route path="/checkout" component={Checkout} />
-      </Switch> 
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+        <Route path="/yourprofile" element={<UserProfile/>} />
+        <Route path="/donate" element={<Donate/>} />
+        <Route path="/checkout" element={<Checkout/>} />
+      </Routes> 
+      
+      <Footer />
     </Router>
   );
 }

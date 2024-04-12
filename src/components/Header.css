@@ -1,8 +1,12 @@
-.header {
-    background-color: #77a361;
-    padding: 10px 20px;
+nav {
+    background-color: #a4c991;
+    padding: 10px 30px;
     color: white;
     display: "flex gap-4 py-1 px-2";
     justify-content: space-between;
     align-items: center;
   }
+
+.navbar-buttons{
+  text-align: left;
+}
