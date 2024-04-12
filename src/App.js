@@ -19,6 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home/>} />
+        <Route path="/profile" element={<Profile/>} />
         <Route path="/yourprofile" element={<UserProfile/>} />
         <Route path="/donate" element={<Donate/>} />
         <Route path="/checkout" element={<Checkout/>} />
