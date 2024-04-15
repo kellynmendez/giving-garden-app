@@ -47,7 +47,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Layout from "./pages/Layout";
 import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+import Login from "./pages/UserLogin";
+import NPOLogin from "./pages/NPOLogin";
+import NPOSignup from "./pages/NPOSignup";
 import Main from "./pages/Main";
 
 function App() {
@@ -58,8 +60,10 @@ function App() {
         {/* Set the default route to the Login page */}
         <Route path="/" element={<Main />} />
         {/* Define other routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/userlogin" element={<Login />} />
+        <Route path="/npologin" element={<NPOLogin />} />
+        <Route path="/usersignup" element={<Signup />} />
+        <Route path="/nposignup" element={<NPOSignup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/layout" element={<Layout />} />

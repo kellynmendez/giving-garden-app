@@ -14,13 +14,22 @@ function Main() {
           <p>Here to connect you to your community and help nonprofits make a difference.</p>
         </div>
         <div className="buttons-container">
-        <Link to="/login">
-          <button className="button">Login</button>
+        <Link to="/userlogin">
+          <button className="button">Donor Login</button>
         </Link>
           <div></div>
-        <Link to="/signup">
-          <button className="button">Sign Up</button>
+        {/* <Link to="/usersignup">
+          <button className="button">Donor Sign Up</button>
+        </Link> */}
+        </div>
+        <div className="buttons-container">
+        <Link to="/npologin">
+          <button className="button">NPO Login</button>
         </Link>
+          <div></div>
+        {/* <Link to="/nposignup">
+          <button className="button">NPO Sign Up</button>
+        </Link> */}
         </div>
       </div>
     </div>

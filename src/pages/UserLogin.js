@@ -4,7 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = () => {
+const UserLogin = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -65,7 +65,7 @@ const Login = () => {
                         </button>
                     </div>
                     <div className="mt-3 text-center">
-                        <span>Need to sign up for an account? <Link to="/">Click here.</Link></span>
+                        <span>Need to sign up for an account? <Link to="/usersignup">Click here.</Link></span>
                     </div>
                 </form>
             </div>
@@ -74,4 +74,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default UserLogin;
