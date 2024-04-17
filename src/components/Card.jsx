@@ -1,12 +1,7 @@
 import React from "react";
 
-import data from "../data/data.json";
 
 function Card(props) {
-  console.log(data);
-  const event = data[0];
-  console.log(event);
-
   return (
     <div className="p-4">
       {/* Card Div */}

@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import data from "../data/data.json";
+
+import { firestore } from "../firebase";
 function Dashboard() {
-  console.log(data);
-  const event = data[0];
-  console.log(event);
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const eventsCollection = firestore.collection("npos"); 
+      const data = await eventsCollection.get();
+      setEvents(data.docs.map((doc) => doc.data()));
+    };
+
+    fetchData();
+  }, []);
+
+  // console.log(data);
+  // const event = data[0];
+  // console.log(event);
 
   return (
-  <div class="container mx-auto px-2 lg:px-2">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
-        {data.map((event, index) => (
+    <div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
+        {events.map((event, index) => (
           <Card
+            key={index}
             name= {<a href="profile">{event.name}</a>}
             date={event.date}
             venue={event.venue}
