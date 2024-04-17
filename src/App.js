@@ -51,6 +51,12 @@ import Login from "./pages/UserLogin";
 import NPOLogin from "./pages/NPOLogin";
 import NPOSignup from "./pages/NPOSignup";
 import Main from "./pages/Main";
+import About from "./pages/About";
+import Donate from "./pages/Donate";
+import Checkout from "./pages/Checkout";
+import Basket from "./pages/Basket";
+import DonationPortal from "./pages/DonationPortal";
+import GardenUpdate from "./pages/GardenUpdate";
 
 function App() {
   return (
@@ -67,6 +73,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/layout" element={<Layout />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/donate" element={<Donate />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/basket" element={<Basket />} />
+        <Route path="/donationportal" element={<DonationPortal />} />
+        <Route path="/gardenupdate" element={<GardenUpdate />} />
       </Routes>
     </Router>
   );
