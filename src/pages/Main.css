@@ -1,0 +1,54 @@
+.main-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Take full width of the container */
+    padding: 20px; /* Add padding to the sides */
+  }
+  
+  .text-container-header {
+    /* margin-top: 100px; */
+    margin-bottom: 10px;
+    color: #87A36F;
+    font-family: serif; /* Specify the font family */
+    font-weight: bold; /* Specify the font weight (boldness) */
+    font-size: 84px;
+    text-align: center; /* Center text horizontally */
+  }
+  
+  .text-container {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 70%;
+    font-size: 54px;
+    text-align: center;
+  }
+  
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #87A36F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

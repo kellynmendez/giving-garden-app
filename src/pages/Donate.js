@@ -1,6 +1,15 @@
+import { useState } from "react";
 import React from "react";
 
 const Donate = () => {
+   
+   const [showPopup, setShowPopup] = useState(false);
+    
+   const handleAddToBasket = () => {
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 2000); // Hide popup after 2 seconds
+   };
+
   return (
     <div class="space-y-5">
     <meta charSet="utf-8"/>
@@ -21,7 +30,12 @@ const Donate = () => {
             <p class="text-lg">$5.20</p>
          </div>
          <div class="flex-1 text-right">
-            <button class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            <button onClick={handleAddToBasket} class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            {showPopup && (
+            <div className="popup">
+               <p>Added to Basket</p>
+            </div>
+            )}
          </div>
       </div>
      </div>
@@ -34,7 +48,12 @@ const Donate = () => {
             <p class="text-lg">$3.99</p>
          </div>
          <div class="flex-1 text-right">
-            <button class=" object-right bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            <button onClick={handleAddToBasket} class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            {showPopup && (
+            <div className="popup">
+               <p>Added to Basket</p>
+            </div>
+            )}
          </div>
    
       </div>
@@ -48,7 +67,12 @@ const Donate = () => {
             <p class="text-lg">$10.99</p>
          </div>
          <div class="flex-1 text-right">
-            <button class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            <button onClick={handleAddToBasket} class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            {showPopup && (
+            <div className="popup">
+               <p>Added to Basket</p>
+            </div>
+            )}
          </div>
       </div>
      </div>
@@ -61,10 +85,42 @@ const Donate = () => {
             <p class="text-lg">$35</p>
          </div>
          <div class="flex-1 text-right">
-            <button class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            <button onClick={handleAddToBasket} class="bg-white hover:bg-[#87A36F] text-gray py-4 px-4 rounded-full">Add to Basket</button>
+            {showPopup && (
+            <div className="popup">
+               <p>Added to Basket</p>
+            </div>
+            )}
          </div>
       </div>
      </div>
+
+     <style>
+        {`
+          :root {
+            --popup-font-size: 25px;
+            --popup-text-color: black;
+            --popup-font-family: Arial, sans-serif;
+
+          }
+          .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            padding: 40px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          .popup p {
+            color: var(--popup-text-color);
+            font-size: var(--popup-font-size);
+            font-family: var(--popup-font-family);
+          }
+        `}
+      </style>
 
   </div>
   );

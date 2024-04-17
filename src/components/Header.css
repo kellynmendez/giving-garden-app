@@ -1,6 +1,10 @@
 nav {
     background-color: #a4c991;
     padding: 10px 30px;
+}
+.header {
+    background-color: #87A36F;
+    padding: 10px 20px;
     color: white;
     display: "flex gap-4 py-1 px-2";
     justify-content: space-between;
