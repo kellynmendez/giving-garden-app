@@ -11,6 +11,7 @@ import Donate from "./pages/Donate";
 import Checkout from "./pages/Checkout";
 import Basket from "./pages/Basket";
 import DonationPortal from "./pages/DonationPortal";
+import GardenUpdate from "./pages/GardenUpdate";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/checkout" component={Checkout} />
         <Route path="/basket" component={Basket} />
         <Route path="/donationportal" component={DonationPortal} />
+        <Route path="/gardenupdate" component={GardenUpdate} />
       </Switch> 
     </Router>
   );
