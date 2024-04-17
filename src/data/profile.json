@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "Johnny Appleseed",
+        "rewards": 1234,
+        "image": "https://www.shutterstock.com/image-vector/vector-young-man-profile-image-260nw-181566215.jpg",
+        "background": "https://www.shutterstock.com/image-photo/green-lawn-terrace-garden-furniture-260nw-671178091.jpg",
+        "email": "ap@gmail.com",
+        "type": "User"
+    }
+]
+  

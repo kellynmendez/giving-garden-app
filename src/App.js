@@ -41,10 +41,17 @@
 // export default App;
 
 import React from "react";
-import Navigation from "./components/Navigation";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+//import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import UserProfile from "./pages/UserProfile";
 import Layout from "./pages/Layout";
 import Signup from "./pages/Signup";
 import Login from "./pages/UserLogin";
@@ -61,7 +68,7 @@ import GardenUpdate from "./pages/GardenUpdate";
 function App() {
   return (
     <Router>
-      <Navigation />
+      <Navbar />
       <Routes>
         {/* Set the default route to the Login page */}
         <Route path="/" element={<Main />} />
@@ -72,6 +79,7 @@ function App() {
         <Route path="/nposignup" element={<NPOSignup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/yourprofile" element={<UserProfile/>} />
         <Route path="/layout" element={<Layout />} />
         <Route path="/about" element={<About />} />
         <Route path="/donate" element={<Donate />} />
@@ -80,6 +88,8 @@ function App() {
         <Route path="/donationportal" element={<DonationPortal />} />
         <Route path="/gardenupdate" element={<GardenUpdate />} />
       </Routes>
+      
+      <Footer />
     </Router>
   );
 }
