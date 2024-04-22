@@ -22,11 +22,13 @@ function Navbar() {
         </li>
            
             <div2 className="flex gap-10 py-1 px-6" style={{alignItems: "center",  justifyContent: "flex-end", position: "absolute", right: "50px", top: "20px"}}>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/checkout">Basket</Link></li>
-            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/basket">Basket</Link></li>
+            <li><Link to="/yourprofile">Profile</Link></li>
             <li><Link to="/yourprofile"> <img src= {profile.image} width="40" height ="40" alt="It's you!"/></Link></li>
             </div2>
+
+           
       </ul> 
       </nav>
       <div className="flex gap-10 px-6" style={{alignItems: "center", flexDirection:"row", justifyContent:"space-between", position: "relative", zIndex:"10"}}>

@@ -1,7 +1,11 @@
 import React from "react"; 
+import Payment from "../components/Payment";
+import { Provider } from 'react-redux'
+import store from '../redux/store'
 
 const Checkout = () => {
     return (
+    <Provider store={store}>
         <div class="space-y-10">
 
             <meta charSet="utf-8"/>
@@ -65,13 +69,7 @@ const Checkout = () => {
                 </div>
 
                 <div class="flex-col px-4 py-4 lg:px-8 space-y-10">
-                    <div class="container shadow-lg  bg-[#f5f7f4] rounded-xl text-[#5B5040] font-serif leading-loose px-8 py-8">
-                        <p class="text-3xl font-serif font-bold leading-loose ">Donation Summary </p>
-                        <p class="max-w-4xl text-sm font-serif leading-loose"><span class="mr-64">Subtotal</span><span>$98.95</span></p>
-                        <p class="max-w-4xl text-sm font-serif leading-loose"><span class="mr-64">Shipping</span><span>$3.99</span></p>
-                        <p><span class="mr-96"></span></p>
-                        <p class="max-w-4xl font-bold text-lg font-serif leading-loose"><span class="mr-64">Total</span><span>$102.94</span></p>
-                    </div>
+                    <div><Payment /></div>
 
                     <div class="container shadow-lg bg-[#E5EEE3] rounded-xl text-[#5B5040] font-serif leading-loose px-8 py-8">
                         <p class="text-3xl text-center font-serif font-bold leading-loose ">Estimated Rewards </p>
@@ -85,7 +83,7 @@ const Checkout = () => {
             </div>
 
         </div>
-        
+        </Provider>
     );
 }
 
