@@ -53,7 +53,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import UserProfile from "./pages/UserProfile";
 import Layout from "./pages/Layout";
-import Signup from "./pages/Signup";
+import Signup from "./pages/UserSignup";
 import Login from "./pages/UserLogin";
 import NPOLogin from "./pages/NPOLogin";
 import NPOSignup from "./pages/NPOSignup";

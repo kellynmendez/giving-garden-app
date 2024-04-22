@@ -4,13 +4,13 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const NPOSignup = () => {
+const Signup = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [notice, setNotice] = useState("");
 
     const signupWithUsernameAndPassword = async (e) => {
@@ -22,11 +22,12 @@ const NPOSignup = () => {
                 const user = userCredential.user;
                 
                 // Create a Firestore document for the donor
-                await firestore.collection("npousers").doc(user.uid).set({
+                await firestore.collection("donorusers").doc(user.uid).set({
                     email: user.email,
-                    name: name,
-                    phone: phone,
-                    userType: "npo"
+                    firstName: firstName,
+                    lastName: lastName,
+                    rewardPoints: 0,
+                    userType: "donor"
                 });
 
                 navigate("/");
@@ -49,25 +50,25 @@ const NPOSignup = () => {
                     )}
                     <div className="form-floating mb-3">
                         <input
-                            id="signupName"
+                            id="signupFirstName"
                             type="text"
                             className="form-control"
-                            placeholder="NPO Name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            placeholder="First Name"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                         />
-                        <label htmlFor="signupName">NPO Name</label>
+                        <label htmlFor="signupFirstName">First Name</label>
                     </div>
                     <div className="form-floating mb-3">
                         <input
-                            id="signupPhone"
+                            id="signupLastName"
                             type="text"
                             className="form-control"
-                            placeholder="9999999999"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
+                            placeholder="Last Name"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                         />
-                        <label htmlFor="signupPhone">Phone</label>
+                        <label htmlFor="signupLastName">Last Name</label>
                     </div>
                     <div className="form-floating mb-3">
                         <input
@@ -123,4 +124,4 @@ const NPOSignup = () => {
     );
 };
 
-export default NPOSignup;
+export default Signup;

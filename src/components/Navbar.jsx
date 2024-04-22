@@ -30,7 +30,7 @@ function Navbar() {
       </ul> 
       </nav>
       <div className="flex gap-10 px-6" style={{alignItems: "center", flexDirection:"row", justifyContent:"space-between", position: "relative", zIndex:"10"}}>
-        <img src= {require("../img/topvines1.png")}  width="650px" alt="vine"style={{left: "350px", top: "0px", position:"fixed", justifyContent: "center"}} />
+        {/* <img src= {require("../img/topvines1.png")}  width="650px" alt="vine"style={{left: "350px", top: "0px", position:"fixed", justifyContent: "center"}} /> */}
       
       </div>
     </header>
