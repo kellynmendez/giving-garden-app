@@ -1,5 +1,6 @@
 import React from "react"; 
 import data from "../data/profile.json"
+import plant01 from "./imgs/RewardPlant01.PNG";
 
 const UserProfile = () => {
     const profile = data[0]
@@ -21,11 +22,28 @@ const UserProfile = () => {
             
         </div>
          <hr />
-        <div class="container max-w-4xl mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
-            <p class="text-3xl font-serif leading-loose ">Plant Name</p>
-            <p class="-py-10 max-w-4xl text-xl font-serif leading-loose">Reward for 50 points</p>
+         
+         <div class="container py-20 px-5 space-x-10 flex justify-center">
+          {/* <div class="max-w-4xs mx-auto px-10 py-10 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+              <p class="text-3xl font-serif leading-loose ">Rewards</p>
+              <p class="-py-10 max-w-4xl text-xl font-serif leading-loose">Total Rewards: 200</p>
+              <p class="-py-10 max-w-4xl text-xl font-serif leading-loose">Next Plant At: 300</p>
+          </div> */}
+          <div class="container w-80 px-2 py-2 flex flex-col text-center items-center bg-[#ECECEC] rounded-xl text-[#5B5040] font-serif leading-loose">
+            <p class="text-3xl font-serif leading-loose ">Rewards</p>
+            <p class="-py-10 max-w-4xl text-xl font-serif leading-loose">Total Rewards: 200</p>
+          </div>
+          <div class="grid grid-cols-4 gap-3 max-w-xs h-100 flex flex-wrap:wrap text-center">
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+              <img src={plant01} alt="plant-01"/>
+          </div>
         </div>
-
       </div>
     );
   }
