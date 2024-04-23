@@ -1,20 +1,20 @@
 import React from "react";
 import Hero from "../components/Hero";
 import Dashboard from "../components/Dashboard";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import { signOut } from "firebase/auth";
+// import { useNavigate } from "react-router-dom";
+// import { auth } from "../firebase";
+// import { signOut } from "firebase/auth";
 
 const Home = () => {
-  const navigate = useNavigate();
-    const user = auth.currentUser;
+  // const navigate = useNavigate();
+    // const user = auth.currentUser;
 
-    const logoutUser = async (e) => {
-        e.preventDefault();
+    // const logoutUser = async (e) => {
+    //     e.preventDefault();
 
-        await signOut(auth);
-        navigate("/");
-    }
+    //     await signOut(auth);
+    //     navigate("/");
+    // }
 
   return (
     <>

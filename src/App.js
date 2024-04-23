@@ -59,11 +59,11 @@ import NPOLogin from "./pages/NPOLogin";
 import NPOSignup from "./pages/NPOSignup";
 import Main from "./pages/Main";
 import About from "./pages/About";
-import Donate from "./pages/Donate";
 import Checkout from "./pages/Checkout";
+import GardenUpdate from "./pages/GardenUpdate";
+import Donate from "./pages/Donate";
 import Basket from "./pages/Basket";
 import DonationPortal from "./pages/DonationPortal";
-import GardenUpdate from "./pages/GardenUpdate";
 
 function App() {
   return (

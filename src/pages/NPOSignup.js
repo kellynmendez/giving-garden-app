@@ -29,7 +29,17 @@ const NPOSignup = () => {
                     userType: "npo"
                 });
 
+                // // Add items to a subcollection in the newly created document
+                // const itemsCollection = firestore.collection("npousers").doc(user.uid).collection("items");
+
+                // await itemsCollection.add({
+                //     url: "Sample Item",
+                //     itemDescription: "This is a sample item",
+                //     itemQuantity: 10,
+                // });
+
                 navigate("/");
+
             } catch {
                 setNotice("Sorry, something went wrong. Please try again.");
             }     
