@@ -22,7 +22,7 @@ const NPOSignup = () => {
                 const user = userCredential.user;
                 
                 // Create a Firestore document for the donor
-                await firestore.collection("npousers").doc(user.uid).set({
+                await firestore.collection("users").doc(user.uid).set({
                     email: user.email,
                     name: name,
                     phone: phone,

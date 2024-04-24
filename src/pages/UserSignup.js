@@ -22,7 +22,7 @@ const Signup = () => {
                 const user = userCredential.user;
                 
                 // Create a Firestore document for the donor
-                await firestore.collection("donorusers").doc(user.uid).set({
+                await firestore.collection("users").doc(user.uid).set({
                     email: user.email,
                     firstName: firstName,
                     lastName: lastName,
