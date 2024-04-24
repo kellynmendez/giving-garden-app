@@ -18,7 +18,7 @@ const ProductItem = ({product}) => {
             <h5 class="mb-2 text-2xl font-serif font-semibold tracking-tight text-gray-900">{name}</h5>
             <p> ${price}</p>
             <div className="card-actions mt-2 justify-end">
-                <button onClick={handleAddToCart} className="text-white bg-[#426B1F] rounded-2xl py-2 px-2" > Add to Cart</button>
+                <button onClick={handleAddToCart} className="text-white bg-[#426B1F] hover:bg-[#abb89f] rounded-2xl py-2 px-2" > Add to Cart</button>
             </div>
         </div>
     </div>

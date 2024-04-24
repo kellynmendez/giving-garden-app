@@ -1,6 +1,5 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import H from '../components/DonationItem'
 import store from '../redux/store'
 import MyCart from '../components/MyCart'
 

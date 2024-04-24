@@ -4,6 +4,9 @@ import Dashboard from "../components/Dashboard";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
+import {useEffect, useState } from "react";
+import data from "../data/data.json"
+import Card from "../components/Card";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,7 +21,6 @@ const Home = () => {
 
   return (
     <>
-    <Hero></Hero>
     <Dashboard></Dashboard>
     {/* <div className = "container">
             <div className = "row justify-content-center">

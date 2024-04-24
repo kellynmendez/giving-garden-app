@@ -9,16 +9,15 @@ const Billing = () => {
 
   const totalBillings = (subTotal) =>{
     if(subTotal > 0) {
-      return Math.round(subTotal + 4.99)
+      return (Math.ceil(subTotal * 100) / 100) + 4.99
     }
-    
-  };
+  }
 
   return (
     <div className="mt-6 rounded-lg border bg-white p-6 shadow-md md:mt-0">
       <div className="mb-2 flex justify-between">
         <p className="text-gray-700">Subtotal</p>
-        <p className="text-gray-700">${subTotal}</p>
+        <p className="text-gray-700">${Math.ceil(subTotal * 100) / 100}</p>
       </div>
       <div className="flex justify-between">
         <p className="text-gray-700">Shipping</p>
@@ -27,7 +26,6 @@ const Billing = () => {
       <hr className="my-4" />
       <div className="flex justify-between">
         <p className="text-lg font-bold">Total</p>
-        <p> </p>
         <div className="">
           <p className="mb-1 text-lg font-bold">${subTotal > 0 ? totalBillings(subTotal) : 0} USD</p>
         </div>
