@@ -1,20 +1,17 @@
 .main-container {
     display: flex;
     justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
     height: 100vh;
   }
   
   .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%; /* Take full width of the container */
     padding: 20px; /* Add padding to the sides */
   }
   
   .text-container-header {
-    /* margin-top: 100px; */
     margin-bottom: 10px;
     color: #87A36F;
     font-family: serif; /* Specify the font family */
