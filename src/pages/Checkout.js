@@ -1,9 +1,48 @@
-import React from "react"; 
 import Payment from "../components/Payment";
 import { Provider } from 'react-redux'
 import store from '../redux/store'
+import React, { useState } from "react";
 
 const Checkout = () => {
+    const [creditCardNumber, setCreditCardNumber] = useState("");
+    const [creditCardError, setCreditCardError] = useState("");
+
+    const handleCreditCardChange = (e) => {
+        const value = e.target.value;
+        setCreditCardNumber(value);
+        if (!/^\d{16}$/.test(value)) {
+            setCreditCardError("Credit card number must be 16 digits.");
+        } else {
+            setCreditCardError("");
+        }
+    };
+
+    const [cvv, setCvv] = useState("");
+    const [cvvError, setCvvError] = useState("");
+
+    const handleCvvChange = (e) => {
+        const value = e.target.value;
+        setCvv(value);
+        if (!/^\d{3}$/.test(value)) {
+            setCvvError("CVV must be 3 digits.");
+        } else {
+            setCvvError("");
+        }
+    };
+
+    const [zipCode, setZipCode] = useState("");
+    const [zipCodeError, setZipCodeError] = useState("");
+
+    const handleZipCodeChange = (e) => {
+        const value = e.target.value;
+        setZipCode(value);
+        if (!/^\d{5}$/.test(value)) {
+            setZipCodeError("Zip code must be 5 digits.");
+        } else {
+            setZipCodeError("");
+        }
+    };
+
     return (
     <Provider store={store}>
         <div class="space-y-10">
@@ -20,7 +59,8 @@ const Checkout = () => {
                         <div class="grid mb-6 gap-6 md:grid-cols-2">
                             <div>
                                 <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Card Number</label>
-                                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" required />
+                                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" value={creditCardNumber} onChange={handleCreditCardChange} required />
+                                {creditCardError && <p className="text-red-500">{creditCardError}</p>}
                             </div>
                             <div>
                                 <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 ">Name on Card</label>
@@ -31,8 +71,9 @@ const Checkout = () => {
                                 <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="MM/YY" required />
                             </div>  
                             <div>
-                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 ">CVV</label>
-                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="XXX" required />
+                                <label for="cvv" class="block mb-2 text-sm font-medium text-gray-900 ">CVV</label>
+                                <input type="text" id="cvv" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" value={cvv} onChange={handleCvvChange} required />
+                                {cvvError && <p className="text-red-500">{cvvError}</p>}
                             </div>  
                         </div>
 
@@ -55,8 +96,9 @@ const Checkout = () => {
                                 <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
                             </div>  
                             <div>
-                                <label for="company" class="block mb-2 text-sm font-medium text-gray-900 ">Zip Code</label>
-                                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+                                <label for="zip_code" class="block mb-2 text-sm font-medium text-gray-900 ">Zip Code</label>
+                                <input type="text" id="zip_code" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="" value={zipCode} onChange={handleZipCodeChange} required />
+                                {zipCodeError && <p className="text-red-500">{zipCodeError}</p>}
                             </div>  
                         </div> 
                         <a href="gardenupdate" type="submit" class="text-white bg-[#426B1F] hover:bg-[#87A36F] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2">

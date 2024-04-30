@@ -3,8 +3,8 @@
         "id": 1,
         "name": "Johnny Appleseed",
         "rewards": 1234,
-        "image": "https://www.shutterstock.com/image-vector/vector-young-man-profile-image-260nw-181566215.jpg",
-        "background": "https://www.shutterstock.com/image-photo/green-lawn-terrace-garden-furniture-260nw-671178091.jpg",
+        "image": "https://www.themultiverse.ai/_next/image?url=%2Fformal%2Fformal-1.webp&w=256&q=75",
+        "background": "https://media.licdn.com/dms/image/C4E12AQH7C4CgOZ81hg/article-cover_image-shrink_720_1280/0/1520134478949?e=2147483647&v=beta&t=CQSCD2U5X2Gvk87PyDWMKEOPmt3GHyaPY6P49_kF8QA",
         "email": "ap@gmail.com",
         "type": "User"
     }
