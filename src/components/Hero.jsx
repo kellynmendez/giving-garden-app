@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hero() {
+const Hero = ({ handleInputChange, query }) => {
   return (
     <div>
       <meta charSet="utf-8"/>
@@ -20,8 +20,8 @@ function Hero() {
           </form>
           <div className="py-5 px-5 flex-1 space-x-4 text-right text-align">
             <button class="bg-[#426B1F] hover:bg-[#87A36F] text-white py-2 px-4 rounded-full">Default</button>
-            <button class="bg-transparent hover:bg-[#87A36F] text-[#426B1F] py-2 px-4 border rounded-full">A-Z</button>
-            <button class="bg-transparent hover:bg-[#87A36F] text-[#426B1F] py-2 px-4 border rounded-full">List View</button>
+           {/* <button class="bg-transparent hover:bg-[#87A36F] text-[#426B1F] py-2 px-4 border rounded-full">A-Z</button>
+            <button class="bg-transparent hover:bg-[#87A36F] text-[#426B1F] py-2 px-4 border rounded-full">List View</button> */}
             <button class="bg-transparent hover:bg-[#87A36F] text-[#426B1F] py-2 px-4 border rounded-full">Favorites</button>
           </div>
         </div>

@@ -26,36 +26,40 @@ const UserLogin = () => {
         {/* <div className="deco-container"> </div> */}
         <div className="login-container"> {/* Apply the styles from Login.css */}
             <div className="row justify-content-center">
-                <form className="col-md-4 mt-3 pt-3 pb-3">
+            <form className="mt-3 py-5 px-10" style={{display: "flex", flexDirection: "column", backgroundColor:"#ececec", justifyContent:"center"}} >
+                    <h1 className="flex font-bold text-3xl px-8 py-4"style={{ color:"#5b5040"}} >
+                        Welcome to GivingGarden!
+                    </h1>
                     {notice !== "" && (
                         <div className="alert alert-warning" role="alert">
                             {notice}
                         </div>
                     )}
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{position:"relative", justifyContent:"center"}}>
                         <input
                             type="email"
-                            className="form-control"
+                            className="flex form-control py-3 px-3 rounded-xl drop-shadow-md"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
                             placeholder="name@example.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{position:"relative", justifyContent:"center"}}>
                         <input
                             type="password"
-                            className="form-control"
+                            className="flex form-control py-3 px-3 rounded-xl drop-shadow-md"
                             id="exampleInputPassword1"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                     </div>
-                    <div className="d-grid">
+                    <div className="mt-3 underline text-center" style={{color:"#87A36F"}}>
+                        <span><Link to="/usersignup"> Sign up for an account today</Link></span>
+                    </div>
+                    <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}>
                         <button
                             type="submit"
                             className="btn btn-primary pt-3 pb-3"
@@ -64,9 +68,7 @@ const UserLogin = () => {
                             Submit
                         </button>
                     </div>
-                    <div className="mt-3 text-center">
-                        <span>Need to sign up for an account? <Link to="/usersignup">Click here.</Link></span>
-                    </div>
+                    
                 </form>
             </div>
         </div>

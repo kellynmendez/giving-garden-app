@@ -4,13 +4,13 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const NPOSignup = () => {
+const Signup = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const [name, setName] = useState("");
-    const [phone, setPhone] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [notice, setNotice] = useState("");
 
     const signupWithUsernameAndPassword = async (e) => {
@@ -22,24 +22,15 @@ const NPOSignup = () => {
                 const user = userCredential.user;
                 
                 // Create a Firestore document for the donor
-                await firestore.collection("npousers").doc(user.uid).set({
+                await firestore.collection("donorusers").doc(user.uid).set({
                     email: user.email,
-                    name: name,
-                    phone: phone,
-                    userType: "npo"
+                    firstName: firstName,
+                    lastName: lastName,
+                    rewardPoints: 0,
+                    userType: "donor"
                 });
 
-                // // Add items to a subcollection in the newly created document
-                // const itemsCollection = firestore.collection("npousers").doc(user.uid).collection("items");
-
-                // await itemsCollection.add({
-                //     url: "Sample Item",
-                //     itemDescription: "This is a sample item",
-                //     itemQuantity: 10,
-                // });
-
                 navigate("/");
-
             } catch {
                 setNotice("Sorry, something went wrong. Please try again.");
             }     
@@ -60,34 +51,34 @@ const NPOSignup = () => {
                             {notice}
                         </div>
                     )}
-                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
-                        <label htmlFor="signupName"style={{gridColumn:"1"}}>NPO Name: </label>
+                    <div className="form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupFirstName"style={{gridColumn:"1"}}>First Name: </label>
                         <input
                             style={{gridColumn:"2"}}
-                            id="signupName"
+                            id="signupFirstName"
                             type="text"
                             className="form-control"
-                            placeholder="NPO Name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            placeholder="First Name"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                         />
                         
                     </div>
-                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
-                        <label htmlFor="signupPhone" style={{gridColumn:"1"}}>Phone: </label>
+                    <div className="form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupLastName"style={{gridColumn:"1"}}>Last Name: </label>
                         <input
                             style={{gridColumn:"2"}}
-                            id="signupPhone"
+                            id="signupLastName"
                             type="text"
                             className="form-control"
-                            placeholder="9999999999"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
+                            placeholder="Last Name"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                         />
                         
                     </div>
-                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
-                       <label htmlFor="signupEmail"style={{gridColumn:"1"}}>Email: </label>
+                    <div className="form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupEmail"style={{gridColumn:"1"}}>Email: </label>
                         <input
                             style={{gridColumn:"2"}}
                             id="signupEmail"
@@ -100,8 +91,8 @@ const NPOSignup = () => {
                         />
                         
                     </div>
-                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
-                        <label htmlFor="signupPassword"style={{gridColumn:"1"}}>Password:</label>
+                    <div className="form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupPassword"style={{gridColumn:"1"}}>Password: </label>
                         <input
                             style={{gridColumn:"2"}}
                             id="signupPassword"
@@ -113,7 +104,7 @@ const NPOSignup = () => {
                         />
                         
                     </div>
-                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                    <div className="form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
                         <label htmlFor="confirmPassword"style={{gridColumn:"1"}}>Confirm Password: </label>
                         <input
                             style={{gridColumn:"2"}}
@@ -137,7 +128,7 @@ const NPOSignup = () => {
                     </div>
                     <div className="mt-3 text-center">
                         <span>
-                            <Link to="/" style={{textDecoration:"underline"}}>Click here to go back.</Link>
+                          <Link to="/" style={{textDecoration:"underline"}}>Click here to go back.</Link>
                         </span>
                     </div>
                 </form>
@@ -146,4 +137,4 @@ const NPOSignup = () => {
     );
 };
 
-export default NPOSignup;
+export default Signup;
