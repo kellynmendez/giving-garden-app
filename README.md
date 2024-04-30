@@ -43,7 +43,7 @@ To use Giving Garden, follow these steps:
     http://localhost:3000
     
 
-3. Log in with the following username & password -> (user = a@gmail.com), (password = password).
+3. Log in with the following username & password -> (user = test@gmail.com), (password = password).
 4. This will direct you to the main page.
 5. On the main page click on "Richardson Humane Society" to visit their profile.
 6. If you click learn more it will direct you to their website.
