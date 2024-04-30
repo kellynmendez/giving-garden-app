@@ -64,8 +64,9 @@ To use Giving Garden, follow these steps:
 18. You can go back to the home page using the navbar. There you may experiment with searching for NPO profiles and adding/removing them to your favorites using the buttons near each profile.
 19. Now you can click log out on the NavBar and return back to the login page
 20. Next click NPO Login
-21. You should log in as Richardson Humane Society
-22. Next click "Requests"
+21. 5. Log in with the following username & password -> (user = test1@gmail.com), (password = password).
+22. You should log in as Richardson Humane Society
+23. Next click "Requests"
 24. You should be able to see a list of your currently requested items
 25. Now you can type in information for a new product (ex: Kitty Litter, https://m.media-amazon.com/images/I/71F5wVPgyaL.jpg, $23, 15)
 26. This product should now show on the screen.
