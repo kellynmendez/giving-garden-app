@@ -17,7 +17,7 @@ const UserProfile = () => {
         <meta charSet="utf-8"/>
        
         <div class="h-500 drop-shadow-md flex items-center justify-center" style={{flexDirection:"column"}}>
-            <img src={profile.background} alt="A beautiful garden" className="h-[400px] w-[1950px] bg-white-500 duration-300"/>
+            <img src={profile.background} alt="A beautiful garden" className="h-[400px] w-[1950px] bg-white-500 duration-300" style={{position: "relative", top:"-50px"}}/>
             <img src={profile.image} alt="Your Profile Picture" className="container max-w-[250px] mx-auto bg-white-500 duration-300"style={{top: "170px", position: "absolute", borderRadius:"50%"}}/>
         </div>
         <div class="flex py-10 space-x-5 items-center justify-center"style={{flexDirection:"column"}}>
