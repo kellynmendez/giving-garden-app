@@ -117,7 +117,7 @@ function Navbar() {
                   userType === 'donor' ? (
                   <div className="flex gap-6 px-6 py-2" style={{alignItems: "center",  justifyContent: "flex-end", position: "absolute", right: "50px", top: "23px"}}>
                     <li><Link to="/home">Home</Link></li>
-                    <li><Link to="/checkout">Basket</Link></li>
+                    <li><Link to="/basket">Basket</Link></li>
                     <li><Link to="/yourprofile">Profile</Link></li>
                     <li><Link to="/yourprofile"> <img src= {profile.image} width="45" height ="45"  alt="It's you!" style={{borderRadius:"50%"}}/></Link></li>
                     <li
@@ -130,9 +130,8 @@ function Navbar() {
                   ):(
                     <div className="flex gap-6 px-6 py-2" style={{alignItems: "center",  justifyContent: "flex-end", position: "absolute", right: "50px", top: "23px"}}>
                     <li><Link to="/home">Home</Link></li>
-                    <li><Link to="/checkout">Requests</Link></li>
+                    <li><Link to="/donationportal">Request</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
-                    <li><Link to="/profile"> <img src= {profile.image} width="45" height ="45"  alt="It's you!" style={{borderRadius:"50%"}}/></Link></li>
                     <li
                         type="logout"
                         onClick={(e) => logout(e)}

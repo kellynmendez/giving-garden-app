@@ -12,7 +12,7 @@ const GardenUpdate = () => {
                     </div>
 
                     <div class="container shadow-lg bg-[#E5EEE3] rounded-xl text-[#000000] font-serif leading-loose px-8 py-8">
-                        <p class="text-3xl text-center font-serif leading-loose ">Total Rewards: 200</p>
+                        <p class="text-3xl text-center font-serif leading-loose ">Total Rewards: 300</p>
                         <p class="text-3xl text-center font-serif leading-loose ">Next Plant At: 100 </p>
                     </div>
             </div>
