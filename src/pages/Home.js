@@ -1,51 +1,36 @@
 import React from "react";
 import Dashboard from "../components/Dashboard";
-import { auth } from "../firebase";
-import { signOut, onAuthStateChanged } from "firebase/auth";
-import {useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { auth } from "../firebase";
+// import { signOut } from "firebase/auth";
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
-  const user = auth.currentUser;
-  const userId = null;
+  // const navigate = useNavigate();
+    // const user = auth.currentUser;
 
+    // const logoutUser = async (e) => {
+    //     e.preventDefault();
 
-  useEffect(() => {
-      
-    onAuthStateChanged(auth, async (user) =>{
-        if(user){
-          setLoading(false);
-        }else{
-          console.log("No user");
-          setLoading(false);
-        }
-      
-      })
+    //     await signOut(auth);
+    //     navigate("/");
+    // }
 
-    
-  }, [userId]);
- 
-
-
-  if (loading == true){
-    return(
-      <h1 className="py-9 px-9 rounded-xl drop-shadow-md" style={{display: "flex", flexDirection: "column", backgroundColor:"#ececec", justifyContent:"center", width:"50vw", marginLeft:"auto", marginRight:"auto"}}>  
-      <p >Loading... </p>
-     </h1>
-    );
-
-  }else{
-
-    return (
-      user != null ?
-        <Dashboard></Dashboard>
-      :
-        <h1 className="py-9 px-9 rounded-xl drop-shadow-md" style={{display: "flex", flexDirection: "column", backgroundColor:"#ececec", justifyContent:"center", width:"50vw", marginLeft:"auto", marginRight:"auto"}}>  
-          <p >Unauthorized error: You are not logged in. </p>
-        </h1>
-      
-    );
-  }
+  return (
+    <>
+    <Hero></Hero>
+    <Dashboard></Dashboard>
+    {/* <div className = "container">
+            <div className = "row justify-content-center">
+                <div className = "col-md-4 text-center">
+                    <p>Welcome <em className = "text-decoration-underline">{ user.email }</em>. You are logged in!</p>
+                    <div className = "d-grid gap-2">
+                        <button type = "submit" className = "btn btn-primary pt-3 pb-3" onClick = {(e) => logoutUser(e)}>Logout</button>
+                    </div>                
+                </div>
+            </div>
+        </div>  */}
+    </>
+  );
 }
 
 export default Home;
