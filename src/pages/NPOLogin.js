@@ -23,8 +23,6 @@ const NPOLogin = () => {
 
     return (
         <div className="main-container">
-        {/* <div className="deco-container"> </div> */}
-        
         <div className="login-container"> {/* Apply the styles from Login.css */}
             
             <div className="row justify-content-center">
@@ -44,7 +42,7 @@ const NPOLogin = () => {
                             className="flex form-control py-3 px-3 rounded-xl drop-shadow-md"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
-                            placeholder="name@example.com"
+                            placeholder="organization@example.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
