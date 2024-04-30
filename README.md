@@ -68,10 +68,10 @@ To use Giving Garden, follow these steps:
 22. You should log in as Richardson Humane Society
 23. Next click "Requests"
 24. You should be able to see a list of your currently requested items
-25. Now you can type in information for a new product (ex: Kitty Litter, https://m.media-amazon.com/images/I/71F5wVPgyaL.jpg, $23, 15)
-26. This product should now show on the screen.
-27. You can test if this product works by adding it to the cart and clicking "Basket" on the NavBar.
-28. You should be able to navigate to the home page and view all the different NPOs
+25. Now you can type in information for a new product (ex: Kitty Litter, https://m.media-amazon.com/images/I/71F5wVPgyaL.jpg, 23, 15)
+26. This product should now show at the bottom of the screen.
+27. You can test if this product is available to donors by clicking "profile" in the nav bar and clicking the donate button.
+28. Now you can navigate to the home page and view all the different NPOs
 29. When you are done, you can click log out in the navbar.
 
 
