@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
 
 const Billing = () => {
   const carts = useSelector((state) => state.carts);
@@ -9,25 +10,30 @@ const Billing = () => {
 
   const totalBillings = (subTotal) =>{
     if(subTotal > 0) {
-      return (Math.ceil(subTotal * 100) / 100) + 4.99
+      return (Math.ceil(subTotal * 100) / 100) + 4.99;
     }
   }
+
+  // Function to format a number as a dollar and cent value
+  const formatMoney = (amount) => {
+    return `$${amount.toFixed(2)}`;
+  };
 
   return (
     <div className="mt-6 rounded-lg border bg-white p-6 shadow-md md:mt-0">
       <div className="mb-2 flex justify-between">
         <p className="text-gray-700">Subtotal</p>
-        <p className="text-gray-700">${Math.ceil(subTotal * 100) / 100}</p>
+        <p className="text-gray-700">{formatMoney(subTotal)}</p>
       </div>
       <div className="flex justify-between">
         <p className="text-gray-700">Shipping</p>
-        <p className="text-gray-700">{subTotal > 0 ? "$4.99" : 0}</p>
+        <p className="text-gray-700">{subTotal > 0 ? "$4.99" : "$0.00"}</p>
       </div>
       <hr className="my-4" />
       <div className="flex justify-between">
         <p className="text-lg font-bold">Total</p>
         <div className="">
-          <p className="mb-1 text-lg font-bold">${subTotal > 0 ? totalBillings(subTotal) : 0} USD</p>
+          <p className="mb-1 text-lg font-bold">{formatMoney(subTotal > 0 ? totalBillings(subTotal) : 0)} USD</p>
         </div>
       </div>
     </div>
