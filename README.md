@@ -36,26 +36,30 @@ To get started with Giving Garden, follow these steps:
 To use Giving Garden, follow these steps:
 
 1. Start the server.
+     ```
     npm start
+    ```
     
 
 2. Open the web browser and navigate to the application.
+    ```
     http://localhost:3000
+    ```
     
 
-3. Log in with the following username & password -> (user = test@gmail.com), (password = password).
-4. This will direct you to the main page.
-5. On the main page click on "Richardson Humane Society" to visit their profile.
-6. If you click learn more it will direct you to their website.
-7. Click "Donate" to make a donation.
-8. Add items to the cart by browsing through available donation options.
-9. Go to the basket page by using the navigation bar.
-10. You can update/remove items to the basket on the basket page and watch the price change.
-11. Click "Checkout" to proceed with the donation process.
-12. Enter your information as required. The system will present a warning until the information fits the standard.
-13. Click "Confirm Checkout" to finalize the donation.
-14. You will see your reward update and the new plant you have gotten.
-15. Visit your profile to view your garden.
+4. Log in with the following username & password -> (user = test@gmail.com), (password = password).
+5. This will direct you to the main page.
+6. On the main page click on "Richardson Humane Society" to visit their profile.
+7. If you click learn more it will direct you to their website.
+8. Click "Donate" to make a donation.
+9. Add items to the cart by browsing through available donation options.
+10. Go to the basket page by using the navigation bar.
+11. You can update/remove items to the basket on the basket page and watch the price change.
+12. Click "Checkout" to proceed with the donation process.
+13. Enter your information as required. The system will present a warning until the information fits the standard.
+14. Click "Confirm Checkout" to finalize the donation.
+15. You will see your reward update and the new plant you have gotten.
+16. Visit your profile to view your garden.
 17. You can go back to the home page using the navbar. There you may experiment with searching for NPO profiles and adding/removing them to your favorites using the buttons near each profile.
 
 
