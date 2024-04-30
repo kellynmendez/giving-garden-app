@@ -47,20 +47,31 @@ To use Giving Garden, follow these steps:
     ```
     
 
-4. Log in with the following username & password -> (user = test@gmail.com), (password = password).
-5. This will direct you to the main page.
-6. On the main page click on "Richardson Humane Society" to visit their profile.
-7. If you click learn more it will direct you to their website.
-8. Click "Donate" to make a donation.
-9. Add items to the cart by browsing through available donation options.
-10. Go to the basket page by using the navigation bar.
-11. You can update/remove items to the basket on the basket page and watch the price change.
-12. Click "Checkout" to proceed with the donation process.
-13. Enter your information as required. The system will present a warning until the information fits the standard.
-14. Click "Confirm Checkout" to finalize the donation.
-15. You will see your reward update and the new plant you have gotten.
-16. Visit your profile to view your garden.
-17. You can go back to the home page using the navbar. There you may experiment with searching for NPO profiles and adding/removing them to your favorites using the buttons near each profile.
+4. Click Donor Login
+5. Log in with the following username & password -> (user = test@gmail.com), (password = password).
+6. This will direct you to the main page.
+7. On the main page click on "Richardson Humane Society" to visit their profile.
+8. If you click learn more it will direct you to their website.
+9. Click "Donate" to make a donation.
+10. Add items to the cart by browsing through available donation options.
+11. Go to the basket page by using the navigation bar.
+12. You can update/remove items to the basket on the basket page and watch the price change.
+13. Click "Checkout" to proceed with the donation process.
+14. Enter your information as required. The system will present a warning until the information fits the standard.
+15. Click "Confirm Checkout" to finalize the donation.
+16. You will see your reward update and the new plant you have gotten.
+17. Visit your profile to view your garden.
+18. You can go back to the home page using the navbar. There you may experiment with searching for NPO profiles and adding/removing them to your favorites using the buttons near each profile.
+19. Now you can click log out on the NavBar and return back to the login page
+20. Next click NPO Login
+21. You should log in as Richardson Humane Society
+22. Next click "Requests"
+24. You should be able to see a list of your currently requested items
+25. Now you can type in information for a new product (ex: Kitty Litter, https://m.media-amazon.com/images/I/71F5wVPgyaL.jpg, $23, 15)
+26. This product should now show on the screen.
+27. You can test if this product works by adding it to the cart and clicking "Basket" on the NavBar.
+28. You should be able to navigate to the home page and view all the different NPOs
+29. When you are done, you can click log out in the navbar.
 
 
 ## 
