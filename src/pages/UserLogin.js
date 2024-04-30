@@ -56,9 +56,6 @@ const UserLogin = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <div className="mt-3 underline text-center" style={{color:"#87A36F"}}>
-                        <span><Link to="/usersignup"> Sign up for an account today</Link></span>
-                    </div>
                     <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}>
                         <button
                             type="submit"
@@ -67,6 +64,9 @@ const UserLogin = () => {
                         >
                             Submit
                         </button>
+                    </div>
+                    <div className="mt-3 underline text-center" style={{color:"#87A36F"}}>
+                        <span><Link to="/usersignup"> Sign up for an account today</Link></span>
                     </div>
                     
                 </form>

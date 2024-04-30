@@ -17,7 +17,6 @@ const Home = () => {
 
   return (
     <>
-    <Hero></Hero>
     <Dashboard></Dashboard>
     {/* <div className = "container">
             <div className = "row justify-content-center">
