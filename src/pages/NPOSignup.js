@@ -51,14 +51,19 @@ const NPOSignup = () => {
     return (
         <div className="login-container">
             <div className="row justify-content-center">
-                <form className="col-md-4 mt-3 pt-3 pb-3">
+            <form className="mt-3 py-5 px-10" style={{display: "flex", flexDirection: "column", backgroundColor:"#ececec", justifyContent:"center"}} >
+                    <h1 className="flex font-bold text-3xl px-8 py-4"style={{ color:"#5b5040"}} >
+                        Welcome to GivingGarden!
+                    </h1>
                     {"" !== notice && (
                         <div className="alert alert-warning" role="alert">
                             {notice}
                         </div>
                     )}
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupName"style={{gridColumn:"1"}}>NPO Name: </label>
                         <input
+                            style={{gridColumn:"2"}}
                             id="signupName"
                             type="text"
                             className="form-control"
@@ -66,10 +71,12 @@ const NPOSignup = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
-                        <label htmlFor="signupName">NPO Name</label>
+                        
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupPhone" style={{gridColumn:"1"}}>Phone: </label>
                         <input
+                            style={{gridColumn:"2"}}
                             id="signupPhone"
                             type="text"
                             className="form-control"
@@ -77,10 +84,12 @@ const NPOSignup = () => {
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                         />
-                        <label htmlFor="signupPhone">Phone</label>
+                        
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                       <label htmlFor="signupEmail"style={{gridColumn:"1"}}>Email: </label>
                         <input
+                            style={{gridColumn:"2"}}
                             id="signupEmail"
                             type="email"
                             className="form-control"
@@ -89,10 +98,12 @@ const NPOSignup = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        <label htmlFor="signupEmail">Email</label>
+                        
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="signupPassword"style={{gridColumn:"1"}}>Password:</label>
                         <input
+                            style={{gridColumn:"2"}}
                             id="signupPassword"
                             type="password"
                             className="form-control"
@@ -100,10 +111,12 @@ const NPOSignup = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <label htmlFor="signupPassword">Password</label>
+                        
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="flex form-floating mb-3"style={{display:"grid", gap:"10px", alignItems:"left"}}>
+                        <label htmlFor="confirmPassword"style={{gridColumn:"1"}}>Confirm Password: </label>
                         <input
+                            style={{gridColumn:"2"}}
                             id="confirmPassword"
                             type="password"
                             className="form-control"
@@ -111,9 +124,9 @@ const NPOSignup = () => {
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
-                        <label htmlFor="confirmPassword">Confirm Password</label>
+                        
                     </div>
-                    <div className="d-grid">
+                    <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}>
                         <button
                             type="submit"
                             className="btn btn-primary pt-3 pb-3"
@@ -124,7 +137,7 @@ const NPOSignup = () => {
                     </div>
                     <div className="mt-3 text-center">
                         <span>
-                            Go back to login? <Link to="/">Click here.</Link>
+                            <Link to="/" style={{textDecoration:"underline"}}>Click here to go back.</Link>
                         </span>
                     </div>
                 </form>
