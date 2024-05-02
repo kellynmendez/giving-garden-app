@@ -1,8 +1,8 @@
 import React from "react"; 
 import { auth, firestore } from "../firebase";
-import { signOut, onAuthStateChanged } from "firebase/auth";
+import {onAuthStateChanged } from "firebase/auth";
 import {useState, useEffect} from "react";
-import {doc, getFirestore, getDoc} from 'firebase/firestore';
+import {doc, getDoc} from 'firebase/firestore';
 
 import data from "../data/profile.json"
 import plant01 from "./imgs/RewardPlant01.PNG";
@@ -18,16 +18,39 @@ import unknownPlant from "./imgs/UnknownPlant.png";
 
 const UserProfile = () => {
   const profile = data[0]
+  const [editMode, setEdit] = useState(false);
   const [userRewards, setUserRewards] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
   const [userFirstName, setUserFirstName] = useState(null);
   const [userLastName, setUserLastName] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [notice, setNotice] = useState("");
 
   const db = firestore;
-
   var userId = null;
+
+  const saveProfile = async (e) => {
+    e.preventDefault();
+
+
+    try {
+    
+        const user = auth.currentUser;
+        
+        // Create a Firestore document for the donor
+        await firestore.collection("users").doc(user.uid).updateUser({
+            email: user.email,
+            firstName: userFirstName,
+            lastName: userLastName,
+            rewardPoints: 0,
+            
+        });
+    } catch {
+        setNotice("Sorry, something went wrong. Please try again.");
+    }     
+    
+    setEdit(false);
+};
 
   useEffect(() => {
       
@@ -57,6 +80,79 @@ const UserProfile = () => {
 
     
   }, [userId]);
+
+
+  function ProfilePanel() {
+    if (editMode) {
+      return <>
+        <form className="col-md-4 mt-3 pt-3 pb-3">
+            {"" !== notice && (
+                <div className="alert alert-warning" role="alert">
+                    {notice}
+                </div>
+            )}
+            <div className="form-floating mb-3">
+                <input
+                    id="updateFirstName"
+                    type="text"
+                    className="form-control"
+                    placeholder="First Name"
+                    value={userFirstName}
+                    onChange={(e) => setUserFirstName(e.target.value)}
+                />
+                <label htmlFor="signupFirstName">First Name</label>
+            </div>
+            <div className="form-floating mb-3">
+                <input
+                    id="updateLastName"
+                    type="text"
+                    className="form-control"
+                    placeholder="Last Name"
+                    value={userLastName}
+                    onChange={(e) => setUserLastName(e.target.value)}
+                />
+                <label htmlFor="signupLastName">Last Name</label>
+            </div>
+            <div className="form-floating mb-3">
+                <input
+                    id="updateEmail"
+                    type="email"
+                    className="form-control"
+                    aria-describedby="emailHelp"
+                    placeholder="name@example.com"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                />
+                <label htmlFor="signupEmail">Email</label>
+            </div>
+            <div className="d-grid">
+                <button
+                    type="editProfile"
+                    className="btn underline btn-primary pt-3 pb-3"
+                    onClick={(e) => saveProfile(e)}
+                >
+                    Save
+                </button>
+            </div>
+        </form>
+      </>;
+    }else{
+      return <>
+        <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userFirstName} {userLastName} </p>
+        <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userEmail}</p>
+        <div className="d-grid">
+            <button
+                type="editProfile"
+                className="btn underline btn-primary pt-3 pb-3"
+                onClick={(e) => setEdit(true)}
+            >
+                Edit
+            </button>
+        </div>
+      </>;
+
+    }
+  }
 
 
 
@@ -187,8 +283,7 @@ const UserProfile = () => {
             <img src={profile.image} alt="Your Profile Picture" className="container max-w-[250px] mx-auto bg-white-500 duration-300"style={{top: "170px", position: "absolute", borderRadius:"50%"}}/>
         </div>
         <div class="flex py-10 space-x-5 items-center justify-center"style={{flexDirection:"column"}}>
-        <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userFirstName} {userLastName} </p>
-        <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userEmail}</p>
+        <ProfilePanel/>
         <p className="font-serif font-heading text-5xl font-bold text-[#426B1F] py-5 px-20"> My Garden</p>
         </div>
          <hr />
