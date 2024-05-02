@@ -123,7 +123,7 @@ const GardenUpdate = () => {
   }else{
     return (
         <div class="container py-20 px-5 justify-center flex mx-auto">
-            <div class="container py-20 max-w-s h-96 text-center">
+            <div class="h-100 w-100">
             <ShowPlant/>
             </div>
             <div class="flex-col px-4 py-4 lg:px-8 space-y-3">
