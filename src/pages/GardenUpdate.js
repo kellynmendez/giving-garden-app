@@ -1,4 +1,5 @@
 import React from "react"; 
+import firebase from '../firebase';
 import {auth, firestore} from "../firebase";
 import {signOut, onAuthStateChanged} from "firebase/auth";
 import {useState, useEffect} from "react";
@@ -39,14 +40,26 @@ const GardenUpdate = () => {
         onAuthStateChanged(auth, async (user) =>{
             if(user){
             userId = user.uid;
+            
             //Access the database to figure out what kind of user this is
             if (userId != null) {
+                const increaseBy = firebase.firestore.FieldValue.increment(50);
+                const userDoc = doc(db, "users", userId);
+                try {
+                await updateDoc(userDoc, {
+                    rewardPoints: increaseBy
+                });
+                console.log("Document successfully updated!");
+                } catch (error) {
+                console.error("Error updating document: ", error);
+                }
+
                 const qsnap = await getDoc(doc(db,'users', userId));
                 if (qsnap.exists()){
                 console.log(qsnap.data());
                 const userData = qsnap.data();
                 setUserRewards(userData.rewardPoints);
-                console.log("UPDATED rewards points = " + userRewards);
+                console.log("rewards points = " + userRewards);
                 }
             }
             setLoading(false);
