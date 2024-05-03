@@ -181,9 +181,9 @@ const NPOUserProfile = () => {
     </div>
     <div className="flex py-10 space-x-5 items-center justify-center"style={{flexDirection:"column"}}> {/*This one is re-rendering for some reason*/}
     {editMode ?
-      <EditProfilePanel/>
+      EditProfilePanel()
     :
-      <ProfilePanel/>
+      ProfilePanel()
     }
    
     <p className="font-serif font-heading text-5xl font-bold text-[#426B1F] py-5 px-20"> Go out there and do great!</p>

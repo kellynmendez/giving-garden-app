@@ -75,6 +75,7 @@ const UserProfile = () => {
   useEffect(() => {
       
     onAuthStateChanged(auth, async (user) =>{
+      console.log("auth state");
         if(user){
           
               
@@ -101,11 +102,8 @@ const UserProfile = () => {
     
   }, [user]);
 
-
-  function ProfilePanel() {
-    
-    if (editMode) {
-      console.log("PFP Panel reloaded");
+  function EditProfilePanel() {
+      console.log("PFP Edit Panel reloaded");
       return <>
         <form className="mt-3 py-5 px-10" style={{display: "flex", flexDirection: "column", backgroundColor:"#ececec", justifyContent:"center"}} >
             {"" !== notice && (
@@ -170,22 +168,26 @@ const UserProfile = () => {
             </div>
         </form>
       </>;
-    }else{
-      return <>
-        <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userFirstName} {userLastName} </p>
-        <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userEmail}</p>
-        <div className="d-grid" onClick={(e) => setEdit(true)}>
-            <button
-                type="editProfile"
-                className="btn underline btn-primary pt-3 pb-3"
-                
-            >
-                Edit
-            </button>
-        </div>
-      </>;
+  }
 
-    }
+
+
+  function ProfilePanel() {
+    console.log("PFP Panel reload");
+    return <>
+      <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userFirstName} {userLastName} </p>
+      <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userEmail}</p>
+      <div className="d-grid" onClick={(e) => setEdit(true)}>
+          <button
+              type="editProfile"
+              className="btn underline btn-primary pt-3 pb-3"
+              
+          >
+              Edit
+          </button>
+      </div>
+    </>;
+
   }
 
 
@@ -312,10 +314,14 @@ const UserProfile = () => {
             <img src={profile.background} alt="A beautiful garden" className="h-[400px] w-[1950px] bg-white-500 duration-300" style={{position: "relative", top:"-50px"}}/>
             <img src={userImgURL} alt="Your Profile Picture" className="container max-w-[250px] mx-auto bg-white-500 duration-300"style={{top: "170px", position: "absolute", borderRadius:"50%"}}/>
         </div>
-        <div class="flex py-10 space-x-5 items-center justify-center"style={{flexDirection:"column"}}>
-        <ProfilePanel/>
-        <p className="font-serif font-heading text-5xl font-bold text-[#426B1F] py-5 px-20"> My Garden</p>
+       <div class="flex py-10 space-x-5 items-center justify-center"style={{flexDirection:"column"}}>
+        {editMode ?
+          EditProfilePanel()
+        :
+          ProfilePanel()
+        }
         </div>
+        <p className="flex font-serif font-heading text-5xl font-bold text-[#426B1F] py-5 px-20" style={{justifyContent:"center"}}> My Garden</p>
          <hr />
          
          <div class="container py-10 px-10 space-x-10 space-y-10 mx-auto justify-center">
