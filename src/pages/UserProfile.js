@@ -159,11 +159,11 @@ const UserProfile = () => {
                 />
                 
             </div>
-            <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}>
+            <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}onClick={(e) => saveProfile(e)}>
                 <button
                     type="saveProfile"
                     className="btn btn-primary"
-                    onClick={(e) => saveProfile(e)}
+                    
                 >
                     Save
                 </button>
