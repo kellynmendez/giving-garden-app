@@ -62,11 +62,11 @@ const NPOLogin = () => {
                     <div className="mt-3 underline text-center" style={{color:"#87A36F"}}>
                         <span><Link to="/nposignup"> Sign up for an account today</Link></span>
                     </div>
-                    <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}>
+                    <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}} onClick={(e) => loginWithUsernameAndPassword(e)}>
                         <button
                             type="submit"
                             className="btn flex py-1"
-                            onClick={(e) => loginWithUsernameAndPassword(e)}
+                            
                         >
                             Log In
                         </button>

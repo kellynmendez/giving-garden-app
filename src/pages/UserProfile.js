@@ -2,7 +2,7 @@ import React from "react";
 import { auth, firestore } from "../firebase";
 import {onAuthStateChanged } from "firebase/auth";
 import {useState, useEffect} from "react";
-import {doc, getDoc} from 'firebase/firestore';
+import {doc, getDoc, updateDoc} from 'firebase/firestore';
 
 import data from "../data/profile.json"
 import plant01 from "./imgs/RewardPlant01.PNG";
@@ -18,50 +18,69 @@ import unknownPlant from "./imgs/UnknownPlant.png";
 
 const UserProfile = () => {
   const profile = data[0]
-  const [editMode, setEdit] = useState(false);
+  
   const [userRewards, setUserRewards] = useState(null);
-  const [userEmail, setUserEmail] = useState(null);
-  const [userFirstName, setUserFirstName] = useState(null);
-  const [userLastName, setUserLastName] = useState(null);
+  const [userEmail, setUserEmail] = useState("");
+  const [userFirstName, setUserFirstName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
+  const [userImgURL, setUserImg] = useState("");
+  const [editMode, setEdit] = useState(false);
   const [loading, setLoading] = useState(true);
   const [notice, setNotice] = useState("");
 
   const db = firestore;
-  var userId = null;
+  var user = auth.currentUser;
+  var userDoc = null;
 
   const saveProfile = async (e) => {
     e.preventDefault();
-
-
-    try {
-    
-        const user = auth.currentUser;
+    if (loading==false){
+      try{
         
-        // Create a Firestore document for the donor
-        await firestore.collection("users").doc(user.uid).updateUser({
-            email: user.email,
-            firstName: userFirstName,
-            lastName: userLastName,
-            rewardPoints: 0,
+        console.log("Save button clicked");
+
+        //Update, make sure it's not timed out and all
+        var user = auth.currentUser;
+        var userDoc = doc(db,"users",user.uid);
+
+        try {
             
-        });
-    } catch {
-        setNotice("Sorry, something went wrong. Please try again.");
-    }     
+            // Create a Firestore document for the donor
+            await updateDoc(userDoc, {
+                email: user.email,
+                firstName: userFirstName,
+                lastName: userLastName,
+                imageURL: userImgURL,
+                
+            });
+            console.log("Updated successfully");
+            setEdit(false);
+        } catch(error) {
+            setNotice("Sorry, something went wrong. Please try again. Error information: " + error);
+            console.log("Error updating");
+        }     
+      }catch{
+        setNotice("Session expired. Please log in again.");
+      }
+    }else{
+      
+      setNotice("Please wait and try again.");
+
+    }
     
-    setEdit(false);
-};
+    
+    
+  };
 
   useEffect(() => {
       
     onAuthStateChanged(auth, async (user) =>{
         if(user){
-          userId = user.uid;
           
               
           //Access the database to figure out what kind of user this is
-          if (userId != null) {
-            const qsnap = await getDoc(doc(db,'users', userId));
+          if (user.uid != null) {
+            const qsnap = await getDoc(doc(db,'users', user.uid));
             if (qsnap.exists()){
               console.log(qsnap.data());
               const userData = qsnap.data();
@@ -69,6 +88,7 @@ const UserProfile = () => {
               setUserEmail(userData.email);
               setUserFirstName(userData.firstName);
               setUserLastName(userData.lastName);
+              setUserImg(userData.imageURL);
             }
           }
           setLoading(false);
@@ -79,56 +99,70 @@ const UserProfile = () => {
       })
 
     
-  }, [userId]);
+  }, [user]);
 
 
   function ProfilePanel() {
+    
     if (editMode) {
+      console.log("PFP Panel reloaded");
       return <>
-        <form className="col-md-4 mt-3 pt-3 pb-3">
+        <form className="mt-3 py-5 px-10" style={{display: "flex", flexDirection: "column", backgroundColor:"#ececec", justifyContent:"center"}} >
             {"" !== notice && (
-                <div className="alert alert-warning" role="alert">
+                <div className="alert alert-warning py-2 center text-red-500" role="alert">
                     {notice}
                 </div>
             )}
-            <div className="form-floating mb-3">
+            <div className="flex form-floating mb-2" style={{position:"relative", justifyContent:"center"}} >
                 <input
                     id="updateFirstName"
                     type="text"
-                    className="form-control"
+                    className="flex form-control py-2 px-2 rounded-xl drop-shadow-md w-80"
                     placeholder="First Name"
                     value={userFirstName}
-                    onChange={(e) => setUserFirstName(e.target.value)}
+                    onChange={async (e) => setUserFirstName(e.target.value)}
                 />
-                <label htmlFor="signupFirstName">First Name</label>
+               
             </div>
-            <div className="form-floating mb-3">
+            <div className="flex form-floating mb-2" style={{position:"relative", justifyContent:"center"}} >
                 <input
                     id="updateLastName"
                     type="text"
-                    className="form-control"
+                    className="flex form-control py-2 px-2 rounded-xl drop-shadow-md w-80"
                     placeholder="Last Name"
                     value={userLastName}
                     onChange={(e) => setUserLastName(e.target.value)}
                 />
-                <label htmlFor="signupLastName">Last Name</label>
+                
             </div>
-            <div className="form-floating mb-3">
+            <div className="flex form-floating mb-2" style={{position:"relative", justifyContent:"center"}} >
                 <input
                     id="updateEmail"
                     type="email"
-                    className="form-control"
+                    className="flex form-control py-2 px-2 rounded-xl drop-shadow-md w-80"
                     aria-describedby="emailHelp"
                     placeholder="name@example.com"
                     value={userEmail}
                     onChange={(e) => setUserEmail(e.target.value)}
                 />
-                <label htmlFor="signupEmail">Email</label>
+                
             </div>
-            <div className="d-grid">
+            <div className="flex form-floating mb-2" style={{position:"relative", justifyContent:"center"}} >
+                <input
+                    id="updateImage"
+                    type="url"
+                    className="flex form-control py-2 px-2 rounded-xl drop-shadow-md w-80"
+                    aria-describedby="image URL"
+                    placeholder="https://imagelocation.com"
+                    value={userImgURL}
+                    onChange={(e) => setUserImg(e.target.value)}
+                />
+                
+            </div>
+            <div className="button" style={{display: "flex", position: "relative", justifyContent:"center", width: "100%"}}>
                 <button
-                    type="editProfile"
-                    className="btn underline btn-primary pt-3 pb-3"
+                    type="saveProfile"
+                    className="btn btn-primary"
                     onClick={(e) => saveProfile(e)}
                 >
                     Save
@@ -140,11 +174,11 @@ const UserProfile = () => {
       return <>
         <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userFirstName} {userLastName} </p>
         <p className="font-serif font-heading text-2xl font-bold text-[#5B5040] py-2 px-20"> {userEmail}</p>
-        <div className="d-grid">
+        <div className="d-grid" onClick={(e) => setEdit(true)}>
             <button
                 type="editProfile"
                 className="btn underline btn-primary pt-3 pb-3"
-                onClick={(e) => setEdit(true)}
+                
             >
                 Edit
             </button>
@@ -269,18 +303,14 @@ const UserProfile = () => {
     return "";
   }
 
-  if (loading == true){
-    return(
-      <p>  </p>
-    );
-  }else{
+  
     return (
         <div >
         <meta charSet="utf-8"/>
        
         <div class="h-500 drop-shadow-md flex items-center justify-center" style={{flexDirection:"column"}}>
             <img src={profile.background} alt="A beautiful garden" className="h-[400px] w-[1950px] bg-white-500 duration-300" style={{position: "relative", top:"-50px"}}/>
-            <img src={profile.image} alt="Your Profile Picture" className="container max-w-[250px] mx-auto bg-white-500 duration-300"style={{top: "170px", position: "absolute", borderRadius:"50%"}}/>
+            <img src={userImgURL} alt="Your Profile Picture" className="container max-w-[250px] mx-auto bg-white-500 duration-300"style={{top: "170px", position: "absolute", borderRadius:"50%"}}/>
         </div>
         <div class="flex py-10 space-x-5 items-center justify-center"style={{flexDirection:"column"}}>
         <ProfilePanel/>
@@ -301,6 +331,6 @@ const UserProfile = () => {
         </div>
       </div>
     );
-  }
+  
 }
 export default UserProfile;

@@ -3,27 +3,22 @@ import { auth, firestore } from "../firebase";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import {useState, useEffect} from "react";
 import { Link, useNavigate } from 'react-router-dom';
-import {doc, getFirestore, getDoc} from 'firebase/firestore';
-
-import data from "../data/profile.json"
-
+import {doc, getDoc} from 'firebase/firestore';
 
 function Navbar() { 
-  const [events, setEvents] = useState([]);
-  //const [user, setUser] = useState(null);
   const [userType, setUserType] = useState(null);
+  const [userImgURL, setUserImg] = useState(null);
   const [loading, setLoading] = useState(true);
   
 
-  const profile = data[0]
   const width = WidthDetection();
  
   const navigate = useNavigate();
   const db = firestore;
-  //test
 
   var userId = null;
 
+  //When the page is loaded, do this
   useEffect(() => {
       
     onAuthStateChanged(auth, async (user) =>{
@@ -38,6 +33,7 @@ function Navbar() {
               console.log(qsnap.data());
               const userData = qsnap.data();
               setUserType(userData.userType);
+              setUserImg(userData.imageURL);
               console.log("Navbar: State changed: userType now " + userData.userType);
               
             }
@@ -119,7 +115,7 @@ function Navbar() {
                     <li><Link to="/home">Home</Link></li>
                     <li><Link to="/basket">Basket</Link></li>
                     <li><Link to="/yourprofile">Profile</Link></li>
-                    <li><Link to="/yourprofile"> <img src= {profile.image} width="45" height ="45"  alt="It's you!" style={{borderRadius:"50%"}}/></Link></li>
+                    <li><Link to="/yourprofile"> <img src= {userImgURL} width="45" height ="45"  alt="It's you!" style={{borderRadius:"50%"}}/></Link></li>
                     <li
                         type="logout"
                         onClick={(e) => logout(e)}
@@ -131,7 +127,8 @@ function Navbar() {
                     <div className="flex gap-6 px-6 py-2" style={{alignItems: "center",  justifyContent: "flex-end", position: "absolute", right: "50px", top: "23px"}}>
                     <li><Link to="/home">Home</Link></li>
                     <li><Link to="/donationportal">Request</Link></li>
-                    <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/yournpo">Profile</Link></li>
+                    <li><Link to="/yournpo"> <img src= {userImgURL} width="45" height ="45"  alt="It's you!" style={{borderRadius:"50%"}}/></Link></li>
                     <li
                         type="logout"
                         onClick={(e) => logout(e)}

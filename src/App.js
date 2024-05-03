@@ -12,6 +12,7 @@ import {
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import UserProfile from "./pages/UserProfile";
+import NPOUserProfile from "./pages/NPOUserProfile";
 import Layout from "./pages/Layout";
 import Signup from "./pages/UserSignup";
 import Login from "./pages/UserLogin";
@@ -40,6 +41,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/yourprofile" element={<UserProfile/>} />
+        <Route path="/yournpo" element={<NPOUserProfile/>} />
         <Route path="/layout" element={<Layout />} />
         <Route path="/about" element={<About />} />
         <Route path="/donate" element={<Donate />} />
