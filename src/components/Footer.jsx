@@ -69,34 +69,34 @@ function Footer() {
       <div className="flex gap-2 " style={{ flexDirection:"row",  alignItems:"center", position: "relative", zIndex:"8", marginBottom:"auto", marginTop:"auto"}}>
           <div className="flex gap-2 px-6" style={{alignItems: "center",  position: "relative", marginBottom:"0", marginTop:"auto", paddingLeft:"25vw"}}>
               {
-              userRewards > 100 ? <img src= {require("../img/sprout1.png")} style={{bottom: "0px", right: "10%", position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : <p className="py-8 px-8"> </p>
+              userRewards >= 100 ? <img src= {require("../img/sprout1.png")} style={{bottom: "0px", right: "10%", position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : <p className="py-8 px-8"> </p>
               } 
               {
-              userRewards > 300 ? <img src= {require("../img/sprout3.png")} style={{bottom: "0px", right: "12%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 300 ? <img src= {require("../img/sprout3.png")} style={{bottom: "0px", right: "12%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               {
-              userRewards > 500 ? <img src= {require("../img/sprout5.png")} style={{bottom: "0px", right: "15%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 500 ? <img src= {require("../img/sprout5.png")} style={{bottom: "0px", right: "15%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               {
-              userRewards > 700 ? <img src= {require("../img/sprout7.png")} style={{bottom: "0px", right: "14%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 700 ? <img src= {require("../img/sprout7.png")} style={{bottom: "0px", right: "14%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               {
-              userRewards > 900 ? <img src= {require("../img/sprout9.png")} style={{bottom: "0px", right: "23%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 900 ? <img src= {require("../img/sprout9.png")} style={{bottom: "0px", right: "23%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               
           </div>
           <div className="flex gap-2 px-6" style={{alignItems: "center",  position: "relative", paddingRight:"25vw", marginBottom:"0", marginTop:"auto"}}>
               {
-              userRewards > 200 ? <img src= {require("../img/sprout2.png")} style={{bottom: "-5px", right: "8%", position: "relative", alt:"", marginBottom:"-5px", marginTop:"auto"}} /> : ""
+              userRewards >= 200 ? <img src= {require("../img/sprout2.png")} style={{bottom: "-5px", right: "8%", position: "relative", alt:"", marginBottom:"-5px", marginTop:"auto"}} /> : ""
               } 
               {
-              userRewards > 400 ? <img src= {require("../img/sprout4.png")} style={{bottom: "0px", right: "10%", position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 400 ? <img src= {require("../img/sprout4.png")} style={{bottom: "0px", right: "10%", position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               {
-              userRewards > 600 ? <img src= {require("../img/sprout6.png")} style={{bottom: "0px", right: "18%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 600 ? <img src= {require("../img/sprout6.png")} style={{bottom: "0px", right: "18%",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               {
-              userRewards > 800 ? <img src= {require("../img/sprout8.png")} style={{bottom: "0px", right: "18%", position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
+              userRewards >= 800 ? <img src= {require("../img/sprout8.png")} style={{bottom: "0px", right: "18%", position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto"}} /> : ""
               } 
               
         
@@ -105,8 +105,8 @@ function Footer() {
         :
         <img src= {require("../img/sprout9.png")} style={{display: "flex", bottom: "0px",  position: "relative", alt:"", marginBottom:"-10px", marginTop:"auto", height:"35vh", marginLeft: "45vw", justifyContent:"center"}} />
         }
-        <div style={{backgroundColor:"#8d7b7a", padding:"35px", justify: "center", color: "white"}}>
-        Footer Content Here. Copyrighted 2024 totally
+        <div style={{display:"flex", backgroundColor:"#8d7b7a", padding:"35px", justify: "center", color: "white"}}>
+        2024. By Esha Bansal, Kellyn Mendez, Gray Simpson, and Shamitha Thumma
         
         </div>
       </footer>
