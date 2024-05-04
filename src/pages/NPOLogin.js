@@ -15,7 +15,7 @@ const NPOLogin = () => {
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            navigate("/profile");
+            navigate("/yournpo");
         } catch {
             setNotice("You entered a wrong username or password.");
         }
