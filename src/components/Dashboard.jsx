@@ -60,7 +60,7 @@ function Dashboard() {
           Home
         </p>
         <SearchBar searchTerm={searchTerm} onSearch={handleSearch} />
-        <div className="py-5 px-5 flex-1 space-x-4 text-right text-align">
+        <div className="py-5 px-5 flex-1 space-x-4 text-right text-align" style={{paddingRight:"150px"}}>
           <button
             className={`${
               activeButton === "default" ? "bg-[#426B1F] text-white" : "bg-white"
